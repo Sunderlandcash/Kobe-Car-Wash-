@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DetailDynamix</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="car detailing, Geelong, Victoria, auto care, professional detailing">
+    <meta name="description" content="DetailDynamix offers expert car detailing services in Geelong, Victoria. Restore your vehicle's shine with our precision care.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="alternate" href="https://www.detaildynamix.com" hreflang="en-au" />
+    <link rel="canonical" href="https://www.detaildynamix.com">
+
+    <!-- Google Analytics (Optional - Replace ID if provided) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=[GOOGLE_ANALYTICS_ID]"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '[GOOGLE_ANALYTICS_ID]');
+    </script>
+
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Great_Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        :root {
+            --primary-bg: black; /* Black background */
+            --primary-text: white; /* White text for contrast */
+            --header-bg: transparent; /* Transparent header */
+            --button-bg: #555; /* Slightly lighter button */
+            --button-hover: #777; /* Button hover */
+        }
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: var(--primary-bg); 
+            color: var(--primary-text); 
+            text-align: center; 
+            overflow-x: hidden;
+        }
+        .container { 
+            width: 100%; 
+            max-width: 1170px; 
+            margin: 0 auto; 
+            padding: 15px; 
+        }
+        .mg-t-sm { margin-top: 20px; }
+        .mg-b-lg { margin-bottom: 40px; }
+        .mg-b-md { margin-bottom: 30px; }
+        .mg-t-lg { margin-top: 40px; }
+        .callout h5 { 
+            font-size: 36px; 
+            margin: 0; 
+        }
+        .row { margin-left: -15px; margin-right: -15px; }
+        .col-xs-12, .col-sm-6 { float: left; padding: 15px; }
+        .col-xs-12 { width: 100%; }
+        .col-sm-6 { width: 50%; }
+        .clearfix { clear: both; }
+        .button { 
+            display: inline-block; 
+            padding: 10px 20px; 
+            background: var(--button-bg); 
+            color: #fff; 
+            text-decoration: none; 
+        }
+        .button:hover { 
+            background: var(--button-hover); 
+        }
+        footer { 
+            background: var(--primary-bg); 
+            padding: 30px 20px; 
+            color: var(--primary-text); 
+        }
+        header { 
+            background: var(--header-bg); 
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            z-index: 1000; 
+            padding: 10px 15px 50px 15px; 
+            transition: background 0.3s; 
+            height: 80px; 
+        }
+        .header-nav { 
+            float: right; 
+            position: relative; 
+        }
+        .header-title { 
+            position: absolute; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            font-family: 'Great Vibes', cursive; 
+            font-size: 60px; 
+            color: white; 
+            margin: 0; 
+            text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.95); 
+            text-decoration: none; 
+            display: inline-block; 
+            padding: 5px 15px; 
+            transition: color 0.3s ease; 
+            line-height: 1; 
+        }
+        .header-title:hover { 
+            color: #ccc; 
+        }
+        .dropdown-toggle { 
+            background: none; 
+            border: none; 
+            padding: 10px; 
+        }
+        .hamburger { 
+            font-size: 28px; 
+            color: white; 
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.95); 
+            cursor: pointer; 
+        }
+        .dropdown-menu { 
+            background: var(--primary-bg); 
+            position: absolute; 
+            right: 0; 
+            left: auto; 
+            margin-top: 0; 
+            border: none; 
+        }
+        .dropdown-menu a { 
+            color: var(--primary-text) !important; 
+        }
+        .dropdown-menu a:hover { 
+            background: #444; /* Darker hover for contrast */
+            color: var(--primary-text) !important; 
+        }
+        .hero-image { 
+            width: 100%; 
+            height: 800px; /* Reduced from 1200px for better usability */
+            object-fit: cover; 
+            object-position: center; 
+            transition: transform 0.3s ease; 
+            display: block; 
+            border-bottom: 2px solid white; /* Added for visibility */
+        }
+        .hero-image:hover { 
+            transform: scale(1.05); 
+        }
+        .template-image { 
+            width: 100%; 
+            height: 400px; 
+            object-fit: cover; 
+            object-position: center; 
+            transition: transform 0.3s ease; 
+            border: 2px solid white; /* Added for visibility */
+        }
+        .template-image:hover { 
+            transform: scale(1.05); 
+        }
+        article h1 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        footer .social-icons a {
+            margin: 0 10px;
+            font-size: 20px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer .social-icons .fa-facebook-f {
+            color: #3b5998; 
+        }
+        footer .social-icons .fa-instagram {
+            background: linear-gradient(45deg, #f09433, #e1306c, #c13584); 
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        footer .social-icons a:hover {
+            opacity: 0.8;
+        }
+        @media (max-width: 768px) {
+            .container { padding: 10px; }
+            .header-title { font-size: 40px; }
+            .callout h5 { font-size: 24px; }
+            .col-sm-6 { width: 100%; }
+            .hero-image { height: 600px; }
+            .template-image { height: 350px; }
+            footer { padding: 20px 10px; }
+            header { padding: 10px 15px 50px 15px; height: 80px; }
+            .hamburger { font-size: 24px; }
+            footer .social-icons a { font-size: 16px; }
+            article h1 { font-size: 20px; }
+        }
+        @media (max-width: 480px) {
+            .header-title { font-size: 30px; }
+            .callout h5 { font-size: 20px; }
+            .hero-image { height: 400px; }
+            .template-image { height: 300px; }
+            article h1 { font-size: 18px; }
+            header { padding: 10px 15px 50px 15px; }
+            .hamburger { font-size: 20px; }
+            footer .social-icons a { font-size: 14px; }
+        }
+        @media (min-width: 769px) {
+            .hero-image { height: 800px; }
+            .template-image { height: 400px; }
+            article h1 { font-size: 28px; }
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('header').css('background', 'transparent');
+            $(window).on('scroll', function() {
+                var st = $(this).scrollTop();
+                if (st <= 0) {
+                    $('header').css('background', 'transparent');
+                } else {
+                    $('header').css('background', 'black'); /* Matches theme */
+                }
+            });
+            $(window).trigger('scroll');
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="header-title">DetailDynamix</a>
+        <div class="header-nav">
+            <div class="dropdown">
+                <button class="dropdown-toggle hamburger" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    ☰
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div>
+        <main>
+            <div>
+                <div>
+                    <img src="images/image3.jpg" alt="DetailDynamix Main Showcase" class="hero-image mg-b-lg" />
+                </div>
+            </div>
+            <div class="container">
+                <div class="col-xs-12 mg-b-md">
+                    <div class="callout mg-t-lg mg-b-lg">
+                        <h5>“Precision Detailing, Unmatched Shine”</h5>
+                    </div>
+                </div>
+                <div class="col-xs-12 mg-b-lg">
+                    <p>Welcome to DetailDynamix, your premier car detailing service in Geelong, Victoria. We specialize in bringing your vehicle back to life with meticulous care and expertise.</p>
+                    <p>From exterior polishes to interior refreshes, we deliver top-tier results that make your car stand out. Contact us today to experience the DetailDynamix difference!</p>
+                </div>
+            </div>
+            <div class="container">
+                <section>
+                    <div class="row">
+                        <article class="col-xs-12 col-sm-6">
+                            <div>
+                                <a href="gallery.html">
+                                    <img class="template-image" src="images/image1.jpg" alt="Gallery Preview" />
+                                </a>
+                            </div>
+                            <div>
+                                <h1>GALLERY</h1>
+                            </div>
+                        </article>
+                        <article class="col-xs-12 col-sm-6">
+                            <div>
+                                <a href="services.html">
+                                    <img class="template-image" src="images/image2.jpg" alt="Services Preview" />
+                                </a>
+                            </div>
+                            <div>
+                                <h1>SERVICES</h1>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="row">
+                        <article class="col-xs-12 col-sm-6">
+                            <div>
+                                <a href="pricing.html">
+                                    <img class="template-image" src="images/image4.jpg" alt="Pricing Preview" />
+                                </a>
+                            </div>
+                            <div>
+                                <h1>PRICING</h1>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="clearfix"></div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="col-xs-12">
+                © DetailDynamix 2025. All Rights Reserved.<br>
+                Email: <a href="mailto:info@DetailDynamix.com" style="color: var(--primary-text);">info@DetailDynamix.com</a> | Phone: <a href="tel:0406997933" style="color: var(--primary-text);">0406 997 933</a><br>
+                Address: Geelong, Victoria
+                <div class="social-icons" style="margin-top: 10px;">
+                    <a href="https://facebook.com/facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
