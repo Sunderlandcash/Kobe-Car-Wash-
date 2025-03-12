@@ -24,7 +24,7 @@
             font-family: Arial, sans-serif; 
             margin: 0; 
             padding: 0; 
-            background: #1a1a1a; /* Darker shade for professionalism */
+            background: #1a1a1a; 
             color: #ffffff; 
             text-align: center; 
             overflow-x: hidden;
@@ -126,16 +126,24 @@
             border: 2px solid #333; 
             overflow: hidden; 
             position: relative;
+            height: 400px; /* Fixed height for consistency */
+        }
+        .flexslider .slides { 
+            height: 100%; 
+        }
+        .flexslider .slides li { 
+            height: 100%; 
         }
         .flexslider .slides img { 
             width: 100%; 
-            height: auto; 
-            object-fit: cover; 
-            object-position: center;
+            height: 100%; /* Forces images to fill the container */
+            object-fit: cover; /* Crops images to fit */
+            object-position: center; /* Centers the cropped image */
         }
         .img-responsive { 
             transition: transform 0.3s ease; 
-            width: 100%;
+            width: 100%; 
+            height: auto;
         }
         .img-responsive:hover { 
             transform: scale(1.05); 
@@ -152,9 +160,8 @@
             .callout h5 { font-size: 18px; }
             .callout h6 { font-size: 14px; }
             .col-sm-6 { width: 100%; }
-            .flexslider .slides img { 
-                height: auto; 
-                min-height: 300px;
+            .flexslider { 
+                height: 300px; /* Reduced height for tablets */
             }
             footer { padding: 20px 10px; }
             header { padding: 10px 15px 20px 15px; height: 60px; }
@@ -164,18 +171,15 @@
             .header-title { font-size: 28px; }
             .callout h5 { font-size: 16px; }
             .callout h6 { font-size: 12px; }
-            .flexslider .slides img { 
-                height: auto; 
-                min-height: 200px;
+            .flexslider { 
+                height: 200px; /* Further reduced for small phones */
             }
             article h1 { font-size: 18px; }
             .button { padding: 8px 16px; }
         }
         @media (min-width: 769px) {
-            .flexslider .slides img { 
-                height: 600px; /* Adjusted for professionalism */
-                object-fit: cover;
-                object-position: center;
+            .flexslider { 
+                height: 400px; /* Consistent height for desktop */
             }
             article h1 { font-size: 28px; }
         }
