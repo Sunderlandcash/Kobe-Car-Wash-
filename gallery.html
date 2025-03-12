@@ -4,8 +4,8 @@
     <title>Gallery - DetailDynamix</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="keywords" content="car detailing, Geelong, Victoria, auto care, gallery">
-    <meta name="description" content="Explore the DetailDynamix gallery showcasing our expert car detailing work in Geelong, Victoria. See the shine for yourself!">
+    <meta name="keywords" content="car detailing, Geelong, Victoria, gallery, auto care">
+    <meta name="description" content="Explore the DetailDynamix gallery showcasing our car detailing work in Geelong, Victoria. See the results for yourself!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="alternate" href="https://www.detaildynamix.com/gallery.html" hreflang="en-au" />
     <link rel="canonical" href="https://www.detaildynamix.com/gallery.html">
@@ -58,10 +58,9 @@
             margin: 0; 
         }
         .row { margin-left: -15px; margin-right: -15px; }
-        .col-xs-12, .col-sm-6, .col-md-4 { float: left; padding: 15px; }
+        .col-xs-12, .col-sm-6 { float: left; padding: 15px; }
         .col-xs-12 { width: 100%; }
         .col-sm-6 { width: 50%; }
-        .col-md-4 { width: 33.33%; }
         .clearfix { clear: both; }
         .button { 
             display: inline-block; 
@@ -69,6 +68,8 @@
             background: var(--button-bg); 
             color: #fff; 
             text-decoration: none; 
+            border: none; 
+            cursor: pointer; 
         }
         .button:hover { 
             background: var(--button-hover); 
@@ -133,54 +134,23 @@
             color: var(--primary-text) !important; 
         }
         .dropdown-menu a:hover { 
-            background: #444; /* Darker hover for contrast */
+            background: #444; 
             color: var(--primary-text) !important; 
-        }
-        .gallery-item { 
-            text-align: center; 
-            position: relative; 
         }
         .template-image { 
             width: 100%; 
-            height: 300px; 
+            height: 400px; 
             object-fit: cover; 
             object-position: center; 
             transition: transform 0.3s ease; 
-            cursor: pointer; 
-            border: 2px solid white; /* Added for visibility on black bg */
+            border: 2px solid white; 
         }
         .template-image:hover { 
             transform: scale(1.05); 
         }
-        .gallery-item h3 { 
-            font-size: 20px; 
+        .gallery-item h1 { 
+            font-size: 24px; 
             margin: 10px 0; 
-        }
-        .gallery-item p { 
-            font-size: 14px; 
-            color: #ccc; /* Lighter gray for contrast */
-        }
-        #image-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            overflow: auto;
-        }
-        #expanded-image {
-            max-width: 90%;
-            max-height: 90vh;
-            object-fit: contain;
-            cursor: pointer;
-        }
-        main { 
-            margin-top: 100px; 
         }
         footer .social-icons a {
             margin: 0 10px;
@@ -199,40 +169,35 @@
         footer .social-icons a:hover {
             opacity: 0.8;
         }
+        main { 
+            margin-top: 100px; 
+        }
         @media (max-width: 768px) {
             .container { padding: 10px; }
             .header-title { font-size: 40px; }
             .callout h5 { font-size: 24px; }
-            .col-sm-6, .col-md-4 { width: 100%; }
-            .template-image { height: 250px; }
-            .gallery-item h3 { font-size: 18px; }
-            .gallery-item p { font-size: 12px; }
-            #expanded-image { max-width: 95%; max-height: 80vh; }
-            header { 
-                padding: 10px 15px 50px 15px; 
-                height: 80px; 
-            }
+            .col-sm-6 { width: 100%; }
+            .template-image { height: 350px; }
+            footer { padding: 20px 10px; }
+            header { padding: 10px 15px 50px 15px; height: 80px; }
             .hamburger { font-size: 24px; }
-            main { 
-                margin-top: 80px; 
-            }
+            main { margin-top: 80px; }
             footer .social-icons a { font-size: 16px; }
+            .gallery-item h1 { font-size: 20px; }
         }
         @media (max-width: 480px) {
             .header-title { font-size: 30px; }
             .callout h5 { font-size: 20px; }
-            .template-image { height: 200px; }
-            .gallery-item h3 { font-size: 16px; }
-            .gallery-item p { font-size: 12px; }
-            #expanded-image { max-width: 95%; max-height: 70vh; }
-            header { 
-                padding: 10px 15px 50px 15px; 
-            }
+            .template-image { height: 300px; }
+            .gallery-item h1 { font-size: 18px; }
+            header { padding: 10px 15px 50px 15px; }
             .hamburger { font-size: 20px; }
-            main { 
-                margin-top: 60px; 
-            }
+            main { margin-top: 60px; }
             footer .social-icons a { font-size: 14px; }
+        }
+        @media (min-width: 769px) {
+            .template-image { height: 400px; }
+            .gallery-item h1 { font-size: 28px; }
         }
     </style>
 
@@ -244,28 +209,10 @@
                 if (st <= 0) {
                     $('header').css('background', 'transparent');
                 } else {
-                    $('header').css('background', 'black'); /* Matches theme */
+                    $('header').css('background', 'black');
                 }
             });
             $(window).trigger('scroll');
-
-            const overlay = $('<div id="image-overlay"></div>').appendTo('body');
-            const expandedImage = $('<img id="expanded-image">').appendTo(overlay);
-
-            $('.gallery-item .template-image').on('click', function() {
-                const src = $(this).attr('src');
-                const alt = $(this).attr('alt');
-                expandedImage.attr('src', src).attr('alt', alt);
-                overlay.fadeIn(300);
-                $('body').css('overflow', 'hidden');
-            });
-
-            overlay.on('click', function(e) {
-                if (e.target === this || e.target === expandedImage[0]) {
-                    overlay.fadeOut(300);
-                    $('body').css('overflow', 'auto');
-                }
-            });
         });
     </script>
 </head>
@@ -294,54 +241,54 @@
                     <div class="callout mg-b-md">
                         <h5>“Precision Detailing, Unmatched Shine”</h5>
                     </div>
-                    <h1>Our Gallery</h1>
-                    <p>Check out our latest car detailing projects in Geelong, Victoria. From deep cleans to showroom finishes, see the DetailDynamix difference!</p>
+                    <h1>Gallery</h1>
+                    <p>Check out our latest car detailing projects in Geelong, Victoria. See the transformation for yourself!</p>
                 </div>
             </div>
             <div class="container mg-b-lg">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-4 gallery-item">
-                        <img src="images/image3.jpg" alt="Main Detailing Showcase" class="template-image">
-                        <h3>Showroom Shine</h3>
-                        <p>Our flagship detailing job, bringing this car to perfection.</p>
+                <section>
+                    <div class="row">
+                        <article class="gallery-item col-xs-12 col-sm-6">
+                            <img src="image3.jpg" alt="Main Detailing Showcase" class="template-image">
+                            <h1>Main Showcase</h1>
+                        </article>
+                        <article class="gallery-item col-xs-12 col-sm-6">
+                            <img src="image1.jpg" alt="Exterior Polish" class="template-image">
+                            <h1>Exterior Polish</h1>
+                        </article>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 gallery-item">
-                        <img src="images/image1.jpg" alt="Exterior Polish" class="template-image">
-                        <h3>Exterior Polish</h3>
-                        <p>A sleek finish that turns heads.</p>
+                    <div class="row">
+                        <article class="gallery-item col-xs-12 col-sm-6">
+                            <img src="image2.jpg" alt="Interior Refresh" class="template-image">
+                            <h1>Interior Refresh</h1>
+                        </article>
+                        <article class="gallery-item col-xs-12 col-sm-6">
+                            <img src="image4.jpg" alt="Wheel Detail" class="template-image">
+                            <h1>Wheel Detail</h1>
+                        </article>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 gallery-item">
-                        <img src="images/image2.jpg" alt="Interior Refresh" class="template-image">
-                        <h3>Interior Refresh</h3>
-                        <p>Spotless and revitalized inside.</p>
+                    <div class="row">
+                        <article class="gallery-item col-xs-12 col-sm-6">
+                            <img src="image5.jpg" alt="Full Detail" class="template-image">
+                            <h1>Full Detail</h1>
+                        </article>
+                        <article class="gallery-item col-xs-12 col-sm-6">
+                            <img src="image6.jpg" alt="Paint Correction" class="template-image">
+                            <h1>Paint Correction</h1>
+                        </article>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 gallery-item">
-                        <img src="images/image4.jpg" alt="Wheel Detail" class="template-image">
-                        <h3>Wheel Detail</h3>
-                        <p>Precision cleaning for every rim.</p>
+                    <div class="row">
+                        <article class="gallery-item col-xs-12 col-sm-6">
+                            <img src="image7.jpg" alt="Quick Wash" class="template-image">
+                            <h1>Quick Wash</h1>
+                        </article>
+                        <article class="gallery-item col-xs-12 col-sm-6">
+                            <img src="image8.jpg" alt="Luxury Detail" class="template-image">
+                            <h1>Luxury Detail</h1>
+                        </article>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 gallery-item">
-                        <img src="images/image5.jpg" alt="Full Detail" class="template-image">
-                        <h3>Full Detail</h3>
-                        <p>Top-to-bottom transformation.</p>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 gallery-item">
-                        <img src="images/image6.jpg" alt="Paint Correction" class="template-image">
-                        <h3>Paint Correction</h3>
-                        <p>Restoring brilliance to the finish.</p>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 gallery-item">
-                        <img src="images/image7.jpg" alt="Quick Wash" class="template-image">
-                        <h3>Quick Wash</h3>
-                        <p>Fast, effective, and flawless.</p>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 gallery-item">
-                        <img src="images/image8.jpg" alt="Luxury Detail" class="template-image">
-                        <h3>Luxury Detail</h3>
-                        <p>Premium care for premium rides.</p>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
+                    <div class="clearfix"></div>
+                </section>
             </div>
         </main>
     </div>
